@@ -1,0 +1,7 @@
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.exe.config
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.exe
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.pdb
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.csprojResolveAssemblyReference.cache
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.csproj.CoreCompileInputs.cache
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.exe
+c:\users\siim\source\repos\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.pdb
