@@ -14,10 +14,10 @@ namespace XMLNotepad
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("1.New note\n2.Read notes");
-                int answer = int.Parse(Console.ReadLine());
-                    
-                if (answer == 1)
+                Console.WriteLine("1.New note\n2.Read notes\n3.Delete note\n4.Delete all notes");
+                string answer = (Console.ReadLine());
+
+                if (answer == "1")
                 {
                     Console.Clear();
                     XmlDocument xmlDocument = new XmlDocument();
@@ -36,19 +36,61 @@ namespace XMLNotepad
                     xmlDocument.Save("../../SavedNotes.xml");
                 }
 
-                else if(answer==2)
+                else if (answer == "2")
                 {
                     Console.Clear();
                     XmlDocument xmlDocument = new XmlDocument();
                     xmlDocument.Load("../../SavedNotes.xml");
-                    foreach(XmlNode note in xmlDocument.DocumentElement.ChildNodes)
+                    foreach (XmlNode note in xmlDocument.DocumentElement.ChildNodes)
                     {
-                        Console.WriteLine(note.Attributes["Title"].Value+":");
+                        Console.WriteLine(note.Attributes["Title"].Value + ":");
                         Console.WriteLine(note.Attributes["Content"].Value);
                         Console.WriteLine();
                     }
                     Console.ReadLine();
                 }
+
+                else if (answer == "3")
+                {
+                    Console.Clear();
+                    XmlDocument xmlDocument = new XmlDocument();
+                    xmlDocument.Load("../../SavedNotes.xml");
+                    foreach (XmlNode note in xmlDocument.DocumentElement.ChildNodes)
+                    {
+                        Console.WriteLine(note.Attributes["Title"].Value + ":");
+                        Console.WriteLine(note.Attributes["Content"].Value);
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine("Enter the title of the note to delete");
+                    var title = (Console.ReadLine());
+                    foreach(XmlNode node in xmlDocument)
+                    {
+                        string nodeTitle = node.Attributes["Title"].Value;
+                        if (nodeTitle==title)
+                        {
+                            node.RemoveChild(node.LastChild);
+                            xmlDocument.Save("../../SavedNotes.xml");
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+
+                else if (answer == "4")
+                {
+                    Console.Clear();
+                    XmlDocument xmlDocument = new XmlDocument();
+                    xmlDocument.Load("../../SavedNotes.xml");
+                    //XmlNodeList nodes = xmlDocument.SelectNodes("Notes");
+                    XmlNode nodeNotes = xmlDocument.SelectSingleNode("Notes");
+                    nodeNotes.RemoveAll();
+                    xmlDocument.Save("../../SavedNotes.xml");
+                    Console.WriteLine("All notes deleted");
+                    Console.ReadLine();
+                }
+                
 
                 else
                 {

@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Notes>
-
+  <Note Title="hello" Content="there" />
+  <Note Title="now theres" Content="2 of them" />
 </Notes>
