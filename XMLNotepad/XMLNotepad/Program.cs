@@ -14,7 +14,7 @@ namespace XMLNotepad
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("1.New note\n2.Read notes\n3.Delete note\n4.Delete all notes");
+                Console.WriteLine("1.New note\n2.Read notes\n3.Delete note\n4.Delete all notes");//TODO=======>Add edit function
                 string answer = (Console.ReadLine());
 
                 if (answer == "1")
