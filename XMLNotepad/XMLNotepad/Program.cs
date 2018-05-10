@@ -50,7 +50,7 @@ namespace XMLNotepad
                     Console.ReadLine();
                 }
 
-                else if (answer == "3")//pooleli
+                else if (answer == "3")
                 {
                     Console.Clear();
                     XmlDocument xmlDocument = new XmlDocument();
@@ -64,76 +64,54 @@ namespace XMLNotepad
                     }
                     Console.WriteLine("Enter the title of the note to delete");
                     var title = (Console.ReadLine());
-                    foreach(XmlNode node in nodes)
+                    foreach(XmlNode node in xmlDocument.DocumentElement.ChildNodes)
                     {
                         if (node.Attributes["Title"].Value == title)
                         {
                             node.ParentNode.RemoveChild(node);
-                            xmlDocument.Save("/../../SavedNotes.xml");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            //string nodetitle = node.Attributes["Title"].Value;
-                            //string nodetitlestring = nodetitle.ToString();
-
-                            //if (nodetitle != null && nodetitlestring == title)
-                            //{
-                            //    node.RemoveAll();
-                            //    xmlDocument.Save("../../savednotes.xml");
-                            //    //if (nodetitle == title)
-                            //    //{
-                            //    //    node.removeall();
-                            //    //    xmldocument.save("../../savednotes.xml");
-                            //    //}
-                            //    //else
-                            //    //{
-
-                            //    //}
-                            //}
-                            //else; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
+                            xmlDocument.Save("../../SavedNotes.xml");
                         }
-                        else; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
-                        //var nodeTitle = node.GetAttribute("Name");//node.Attributes["Title"].Value;//node.Value;
-                        //if (nodetitle == title)
-                        //{
-                        //    node.removeall();
-                        //    xmldocument.save("../../savednotes.xml");
-                        //}
-                        //else
-                        //{
 
-                        //}
+                        else
+                        {
+
+                        }
                     }
                 }
 
                 else if (answer == "4")
                 {
                     Console.Clear();
-                    XmlDocument xmlDocument = new XmlDocument();
-                    xmlDocument.Load("../../SavedNotes.xml");
-                    //XmlNodeList nodes = xmlDocument.SelectNodes("Notes");
-                    XmlNode nodeNotes = xmlDocument.SelectSingleNode("Notes");
-                    nodeNotes.RemoveAll();
-                    xmlDocument.Save("../../SavedNotes.xml");
-                    Console.WriteLine("All notes deleted");
-                    Console.ReadLine();
+                    Console.WriteLine("Are you sure?(y/n)");
+                    var sureAnswer=(Console.ReadLine());
+                    while (true)
+                    {
+                        if (sureAnswer == "y")
+                        {
+                            XmlDocument xmlDocument = new XmlDocument();
+                            xmlDocument.Load("../../SavedNotes.xml");
+                            XmlNode nodeNotes = xmlDocument.SelectSingleNode("Notes");
+                            nodeNotes.RemoveAll();
+                            xmlDocument.Save("../../SavedNotes.xml");
+                            Console.Clear();
+                            Console.WriteLine("All notes deleted");
+                            Console.ReadLine();
+                            break;
+                        }
+                        else if (sureAnswer == "n")
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("xd");
+                            Console.ReadLine();
+                            break;
+                        }
+                    }
                 }
                 
-
                 else
                 {
 
