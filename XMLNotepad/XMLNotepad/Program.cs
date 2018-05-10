@@ -50,7 +50,7 @@ namespace XMLNotepad
                     Console.ReadLine();
                 }
 
-                else if (answer == "3")
+                else if (answer == "3")//pooleli
                 {
                     Console.Clear();
                     XmlDocument xmlDocument = new XmlDocument();
