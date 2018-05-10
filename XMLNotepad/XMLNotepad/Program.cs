@@ -55,6 +55,7 @@ namespace XMLNotepad
                     Console.Clear();
                     XmlDocument xmlDocument = new XmlDocument();
                     xmlDocument.Load("../../SavedNotes.xml");
+                    XmlNodeList nodes = xmlDocument.SelectNodes("Notes");
                     foreach (XmlNode note in xmlDocument.DocumentElement.ChildNodes)
                     {
                         Console.WriteLine(note.Attributes["Title"].Value + ":");
@@ -63,18 +64,59 @@ namespace XMLNotepad
                     }
                     Console.WriteLine("Enter the title of the note to delete");
                     var title = (Console.ReadLine());
-                    foreach(XmlNode node in xmlDocument)
+                    foreach(XmlNode node in nodes)
                     {
-                        string nodeTitle = node.Attributes["Title"].Value;
-                        if (nodeTitle==title)
+                        if (node.Attributes["Title"].Value == title)
                         {
-                            node.RemoveChild(node.LastChild);
-                            xmlDocument.Save("../../SavedNotes.xml");
-                        }
-                        else
-                        {
+                            node.ParentNode.RemoveChild(node);
+                            xmlDocument.Save("/../../SavedNotes.xml");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            //string nodetitle = node.Attributes["Title"].Value;
+                            //string nodetitlestring = nodetitle.ToString();
+
+                            //if (nodetitle != null && nodetitlestring == title)
+                            //{
+                            //    node.RemoveAll();
+                            //    xmlDocument.Save("../../savednotes.xml");
+                            //    //if (nodetitle == title)
+                            //    //{
+                            //    //    node.removeall();
+                            //    //    xmldocument.save("../../savednotes.xml");
+                            //    //}
+                            //    //else
+                            //    //{
+
+                            //    //}
+                            //}
+                            //else; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
                         }
+                        else; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ; ;
+                        //var nodeTitle = node.GetAttribute("Name");//node.Attributes["Title"].Value;//node.Value;
+                        //if (nodetitle == title)
+                        //{
+                        //    node.removeall();
+                        //    xmldocument.save("../../savednotes.xml");
+                        //}
+                        //else
+                        //{
+
+                        //}
                     }
                 }
 
