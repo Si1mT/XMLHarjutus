@@ -25,8 +25,23 @@ namespace XMLNotepad
                     XmlNode xmlNode = xmlDocument.SelectSingleNode("Notes");
                     XmlNode node = xmlDocument.CreateElement("Note");
                     XmlAttribute Title = xmlDocument.CreateAttribute("Title");
-                    Console.WriteLine("Insert note title:");
-                    Title.Value = (Console.ReadLine());
+                    while (true)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Insert note title:");
+                        Title.Value = (Console.ReadLine());
+                        string titleString = Title.Value;
+                        if (string.IsNullOrWhiteSpace(Title.Value))
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Title can't be empty");
+                            Console.ReadLine();
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
                     node.Attributes.Append(Title);
                     XmlAttribute Content = xmlDocument.CreateAttribute("Content");
                     Console.WriteLine("Insert note content:");
@@ -81,11 +96,12 @@ namespace XMLNotepad
 
                 else if (answer == "4")
                 {
-                    Console.Clear();
-                    Console.WriteLine("Are you sure?(y/n)");
-                    var sureAnswer=(Console.ReadLine());
                     while (true)
                     {
+                        Console.Clear();
+                        Console.WriteLine("Are you sure?(y/n)");
+                        string sureAnswer = (Console.ReadLine());
+
                         if (sureAnswer == "y")
                         {
                             XmlDocument xmlDocument = new XmlDocument();
@@ -107,7 +123,6 @@ namespace XMLNotepad
                             Console.Clear();
                             Console.WriteLine("Invalid answer");
                             Console.ReadLine();
-                            break;
                         }
                     }
                 }
