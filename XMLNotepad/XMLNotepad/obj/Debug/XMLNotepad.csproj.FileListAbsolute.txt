@@ -8,7 +8,7 @@ c:\users\siim\source\repos\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.pdb
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.exe.config
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.exe
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\bin\Debug\XMLNotepad.pdb
-C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.csprojResolveAssemblyReference.cache
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.csproj.CoreCompileInputs.cache
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.exe
 C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.pdb
+C:\Users\opilane\Documents\GitHub\XMLHarjutus\XMLNotepad\XMLNotepad\obj\Debug\XMLNotepad.csprojAssemblyReference.cache
